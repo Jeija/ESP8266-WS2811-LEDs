@@ -1,0 +1,20 @@
+{
+  "name": "ESP8266-WS2811-LEDs",
+  "version": "0.0.1",
+  "description": "Node.js client for WS2811 LED Strips",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jeija/ESP8266-WS2811-LEDs.git"
+  },
+  "dependencies": {
+    "csv-load-sync": "0.0.3",
+    "express": "^4.13.3",
+    "frequencyjs": "0.0.4",
+    "get-pixels": "^3.2.3",
+    "parse-color": "^1.0.0",
+    "simplex-noise": "^2.2.0",
+    "socket.io": "^1.4.0"
+  },
+  "license" : "GPL-3.0"
+}

@@ -1,0 +1,110 @@
+body {
+	margin:0;
+	padding:0;
+	background:#000;
+	color:#fff;
+	font-family:Cantarell, Helvetica, Arial;
+}
+
+h1 {
+	text-align:center;
+}
+
+#previews {
+	position:absolute;
+	height:80vh;
+	width:60vw;
+	left:5vw;
+	top:5vh;
+	border:3px solid #00f;
+}
+
+.strip-preview {
+	width:97%;
+	height:3vh;
+	margin-top:2vh;
+	margin-left:0.5vw;
+}
+
+.strip-preview-heading {
+	display:inline-block;
+	float:left;
+	font-size:2vh;
+	line-height:3vh;
+	margin-right:1vw;
+}
+
+.strip-preview-canvas {
+	height:3vh;
+	width:85%;
+	margin:auto;
+}
+
+#info {
+	position:absolute;
+	width:25vw;
+	right:5vw;
+	top:5vh;
+	height:90vh;
+	border:1px solid #0a0;
+}
+
+#info_padding {
+	padding:10px;
+}
+
+#next_container, #active_container {
+	font-size:2vw;
+}
+
+#recorder {
+	position:absolute;
+	height:5vh;
+	width:60vw;
+	left:5vw;
+	top:90vh;
+	border:1px solid #f00;
+}
+
+#record_indicator {
+	line-height:5vh;
+	width:8vw;
+	font-size:1.5vw;
+	text-align:center;
+	color:#aaa;
+	font-style:italic;
+	border-right:1px solid #f00;
+	display:inline-block;
+	float:left;
+}
+
+#record_indicator.recording {
+	font-weight:bold;
+	font-style:normal;
+	background:#a00;
+	color:#fff;
+}
+
+#record_timeline {
+	background:#444;
+	display:inline-block;
+	height:5vh;
+	width:calc(52vw - 1px);
+	position:relative;
+}
+
+.record_event {
+	line-height:5vh;
+	background:#aa0;
+	display:inline-block;
+	padding:0 0.3vw;
+	color:#000;
+	position:absolute;
+	font-weight:bold;
+}
+
+#record_iter {
+	height:5vh;
+	position:absolute;
+	border-right:3px solid #f00;
+}

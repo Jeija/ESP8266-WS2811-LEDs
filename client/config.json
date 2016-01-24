@@ -1,0 +1,58 @@
+[
+	{
+		"ip" : "192.168.0.80",
+		"port" : 2711,
+		"arrangement" : "center",
+		"length" : 50,
+		"fps" : 30
+	},
+	{
+		"ip" : "192.168.0.81",
+		"port" : 2711,
+		"arrangement" : "center",
+		"length" : 50,
+		"fps" : 30
+	},
+	{
+		"ip" : "192.168.0.82",
+		"port" : 2711,
+		"arrangement" : "center",
+		"length" : 50,
+		"fps" : 30
+	},
+	{
+		"ip" : "192.168.0.83",
+		"port" : 2711,
+		"arrangement" : "forwards",
+		"length" : 50,
+		"fps" : 30
+	},
+	{
+		"ip" : "192.168.0.84",
+		"port" : 2711,
+		"arrangement" : "forwards",
+		"length" : 50,
+		"fps" : 30
+	},
+	{
+		"ip" : "192.168.0.85",
+		"port" : 2711,
+		"arrangement" : "forwards",
+		"length" : 50,
+		"fps" : 30
+	},
+	{
+		"ip" : "192.168.0.86",
+		"port" : 2711,
+		"arrangement" : "forwards",
+		"length" : 50,
+		"fps" : 30
+	},
+	{
+		"ip" : "192.168.0.87",
+		"port" : 2711,
+		"arrangement" : "forwards",
+		"length" : 50,
+		"fps" : 30
+	}
+]

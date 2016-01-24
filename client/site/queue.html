@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Animation Queue</title>
+	<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="queue.js"></script>
+	<link rel="stylesheet" type="text/css" href="queue.css">
+</head>
+<body>
+	<div id="content">
+		<div id="config">
+			<select id="nextanim"></select>
+			<div class="header">Settings</div>
+			<table id="settings"></table>
+			<input type="button" id="addanimation" value="Add to Queue">
+		</div>
+		<div id="queue">
+			<div class="header">Queue</div>
+			<table id="queuelist"></table>
+		</div>
+	</div>
+</body>
+</html>

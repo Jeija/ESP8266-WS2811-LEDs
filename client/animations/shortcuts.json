@@ -1,0 +1,9 @@
+{
+	"1" : {
+		"name" : "strobe",
+		"settings" : {
+			"color" : "white",
+			"decay" : "fast"
+		}
+	}
+}

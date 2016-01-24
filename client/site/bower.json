@@ -1,0 +1,9 @@
+{
+  "name": "LiveControl",
+  "version": "0.0.1",
+  "homepage": "https://github.com/Jeija/WS2811LEDMatrix",
+  "description": "Control Panel for WS2811 LED Matrices",
+  "dependencies": {
+    "jquery": "~2.1.4"
+  }
+}

@@ -1,0 +1,149 @@
+body {
+	background:#000;
+	color:#fff;
+	padding:0;
+	margin:0;
+	font-family:Cantarell, Helvetica, Arial;
+	-moz-user-select: none;
+	user-select: none;
+}
+
+select {
+	border:none;
+	padding:5px 10px;
+	background:#444;
+	font-size:16px;
+	color:#fff;
+	cursor:pointer;
+	width:100%;
+}
+
+option {
+	font-size:16px;
+	padding:5px 10px;
+}
+
+select:-moz-focusring {
+	color:transparent;
+	text-shadow:0 0 0 #fff;
+}
+
+#settings {
+	margin-top:10px;
+	border-collapse:collapse;
+	width:100%;
+}
+
+#settings td {
+	text-align:left;
+	padding:5px 12px;
+	font-size:16px;
+	font-weight:bold;
+}
+
+#settings td:nth-child(odd) {
+	width:80px;
+}
+
+input[type="text"].setting {
+	border:none;
+	background:#444;
+	width:92%;
+	padding:10px 12px;
+	font-size:16px;
+	color:#fff;
+}
+
+#nextanim {
+	margin-bottom:10px;
+}
+
+.header {
+	margin-bottom:10px;
+	font-size:30px;
+}
+
+input[type="button"] {
+	margin-top:10px;
+	border:1px solid #fff;
+	background:#000;
+	color:#fff;
+	font-size:16px;
+	padding:5px 10px;
+	cursor:pointer;
+}
+
+input[type="button"]:hover { background:#222; }
+input[type="button"]:active { background:#444; }
+
+#addanimation {
+	position:absolute;
+	width:130px;
+	left:calc(50% - 65px);
+	bottom:20px;
+}
+
+#content {
+	width:900px;
+	margin:0 auto;
+	position:relative;
+}
+
+#config {
+	border:1px solid #fff;
+	position:absolute;
+	left:3%;
+	top:30px;
+	width:50%;
+	padding:3%;
+	height:85vh;
+}
+
+#queue {
+	border:1px solid #0f0;
+	position:absolute;
+	right:3%;
+	top:30px;
+	width:30%;
+	padding:3%;
+}
+
+#queuelist {
+	border-collapse:collapse;
+}
+
+#queuelist tr:hover {
+	cursor:pointer;
+	background:#333;
+}
+
+#queuelist td {
+	border-bottom:1px dashed #444;
+	padding:0;
+	padding:4px; 20px;
+	position:relative;
+	position:relative;
+}
+
+#queuelist tr td:nth-child(1) { width:130px; }
+#queuelist tr td:nth-child(2) { width:22px; }
+#queuelist tr td:nth-child(3) { width:22px; }
+#queuelist tr td:nth-child(4) { width:22px; }
+#queuelist tr td:nth-child(5) { width:22px; }
+
+.delqueue, .moveup, .movedown, .loadqueue {
+	position:absolute !important;
+	border:none !important;
+	padding:0 !important;
+	font-size:25px !important;
+	background:transparent !important;
+	line-height:20px !important;
+	left:0px !important;
+}
+
+.delqueue { top:-11px !important; }
+.moveup, .movedown, .loadqueue { top:-8px !important; }
+
+.delqueue:active, .moveup:active, .movedown:active, .loadqueue:active {
+	color:#aaf;
+}

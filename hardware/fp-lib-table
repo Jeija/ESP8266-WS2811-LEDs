@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name "WS2811 Controller")(type KiCad)(uri ${KIPRJMOD}/mod)(options "")(descr ""))
+)

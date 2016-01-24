@@ -1,0 +1,341 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:esp-03
+LIBS:lf33cdt_d-pak
+LIBS:ws2811controller-cache
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L +3V3 #PWR01
+U 1 1 56844294
+P 750 2150
+F 0 "#PWR01" H 750 2000 50  0001 C CNN
+F 1 "+3V3" H 750 2290 50  0000 C CNN
+F 2 "" H 750 2150 50  0000 C CNN
+F 3 "" H 750 2150 50  0000 C CNN
+	1    750  2150
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR02
+U 1 1 56844DC8
+P 3075 3275
+F 0 "#PWR02" H 3075 3025 50  0001 C CNN
+F 1 "GND" H 3075 3125 50  0000 C CNN
+F 2 "" H 3075 3275 50  0000 C CNN
+F 3 "" H 3075 3275 50  0000 C CNN
+	1    3075 3275
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3075 2500 3075 3275
+Wire Wire Line
+	3075 3050 2900 3050
+Wire Wire Line
+	2900 2500 3075 2500
+Connection ~ 3075 3050
+$Comp
+L R R1
+U 1 1 56844F3A
+P 1000 2550
+F 0 "R1" V 900 2550 50  0000 C CNN
+F 1 "10K" V 1000 2550 50  0000 C CNN
+F 2 "Resistors_SMD:R_1206_HandSoldering" V 930 2550 50  0001 C CNN
+F 3 "" H 1000 2550 50  0000 C CNN
+	1    1000 2550
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	750  2300 1700 2300
+Wire Wire Line
+	1150 2550 1700 2550
+Wire Wire Line
+	750  2150 750  2550
+Wire Wire Line
+	750  2550 850  2550
+Connection ~ 750  2300
+Text Label 1275 2700 0    60   ~ 0
+UART_TX
+Text Label 1275 2550 0    60   ~ 0
+CH_PD
+Wire Wire Line
+	1275 2700 1700 2700
+Wire Wire Line
+	800  2800 1700 2800
+Text Label 1275 2800 0    60   ~ 0
+UART_RX
+$Comp
+L ESP-03 U2
+U 1 1 56845717
+P 2300 2700
+F 0 "U2" H 2550 3300 60  0000 C CNN
+F 1 "ESP-03" H 2550 2150 60  0000 C CNN
+F 2 "WS2811 Controller:esp-03" H 2300 2450 60  0001 C CNN
+F 3 "" H 2300 2450 60  0000 C CNN
+	1    2300 2700
+	1    0    0    -1  
+$EndComp
+Text Label 800  2800 0    60   ~ 0
+WS_DATA
+$Comp
+L LF33CDT_D-PAK U1
+U 1 1 568459C3
+P 1200 950
+F 0 "U1" H 1000 1100 60  0000 C CNN
+F 1 "LF33" H 1350 700 60  0000 C CNN
+F 2 "TO_SOT_Packages_SMD:TO-252-2Lead" H 1200 1050 60  0001 C CNN
+F 3 "" H 1200 1050 60  0000 C CNN
+	1    1200 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L C_Small C1
+U 1 1 568459F2
+P 1700 1200
+F 0 "C1" H 1710 1270 50  0000 L CNN
+F 1 "22u" H 1710 1120 50  0000 L CNN
+F 2 "Capacitors_SMD:C_1206_HandSoldering" H 1700 1200 50  0001 C CNN
+F 3 "" H 1700 1200 50  0000 C CNN
+	1    1700 1200
+	1    0    0    -1  
+$EndComp
+$Comp
+L +5V #PWR03
+U 1 1 56845A13
+P 700 850
+F 0 "#PWR03" H 700 700 50  0001 C CNN
+F 1 "+5V" H 700 990 50  0000 C CNN
+F 2 "" H 700 850 50  0000 C CNN
+F 3 "" H 700 850 50  0000 C CNN
+	1    700  850 
+	1    0    0    -1  
+$EndComp
+$Comp
+L +3V3 #PWR04
+U 1 1 56845A33
+P 1700 850
+F 0 "#PWR04" H 1700 700 50  0001 C CNN
+F 1 "+3V3" H 1700 990 50  0000 C CNN
+F 2 "" H 1700 850 50  0000 C CNN
+F 3 "" H 1700 850 50  0000 C CNN
+	1    1700 850 
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR05
+U 1 1 56845A71
+P 1200 1500
+F 0 "#PWR05" H 1200 1250 50  0001 C CNN
+F 1 "GND" H 1200 1350 50  0000 C CNN
+F 2 "" H 1200 1500 50  0000 C CNN
+F 3 "" H 1200 1500 50  0000 C CNN
+	1    1200 1500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1200 1250 1200 1500
+Wire Wire Line
+	700  850  700  950 
+Wire Wire Line
+	700  950  800  950 
+Wire Wire Line
+	1600 950  1700 950 
+Wire Wire Line
+	1700 850  1700 1100
+Wire Wire Line
+	1700 1300 1700 1400
+Wire Wire Line
+	1700 1400 1200 1400
+Connection ~ 1200 1400
+Connection ~ 1700 950 
+NoConn ~ 1700 3050
+Wire Wire Line
+	2900 2700 3500 2700
+Text Label 3500 2700 2    60   ~ 0
+PSU_EN
+NoConn ~ 2900 2800
+NoConn ~ 2900 2900
+NoConn ~ 2900 2600
+Text Label 3500 2300 2    60   ~ 0
+FLASH_EN
+$Comp
+L CONN_01X05 P5
+U 1 1 568466D4
+P 3400 1050
+F 0 "P5" H 3400 1350 50  0000 C CNN
+F 1 "DEBUG_HDR" V 3500 1050 50  0000 C CNN
+F 2 "WS2811 Controller:5pin_SMD" H 3400 1050 50  0001 C CNN
+F 3 "" H 3400 1050 50  0000 C CNN
+	1    3400 1050
+	1    0    0    -1  
+$EndComp
+Text Notes 2300 1850 0    60   ~ 0
+Debug + Programming header\nUART_RX is also WS2811 Data
+$Comp
+L GND #PWR06
+U 1 1 568467FD
+P 3100 1450
+F 0 "#PWR06" H 3100 1200 50  0001 C CNN
+F 1 "GND" H 3100 1300 50  0000 C CNN
+F 2 "" H 3100 1450 50  0000 C CNN
+F 3 "" H 3100 1450 50  0000 C CNN
+	1    3100 1450
+	1    0    0    -1  
+$EndComp
+Text Label 2600 1050 0    60   ~ 0
+UART_RX
+Text Label 2600 1150 0    60   ~ 0
+UART_TX
+Wire Wire Line
+	2600 1050 3200 1050
+Text Label 2600 950  0    60   ~ 0
+CH_PD
+Wire Wire Line
+	2600 1150 3200 1150
+Text Label 2600 850  0    60   ~ 0
+FLASH_EN
+$Comp
+L CONN_01X01 P1
+U 1 1 56846D85
+P 1150 4250
+F 0 "P1" H 1150 4350 50  0000 C CNN
+F 1 "PSU_GND" V 1250 4250 50  0000 C CNN
+F 2 "WS2811 Controller:SolderPad" H 1150 4250 50  0001 C CNN
+F 3 "" H 1150 4250 50  0000 C CNN
+	1    1150 4250
+	1    0    0    -1  
+$EndComp
+Text Notes 700  3750 0    60   ~ 0
+Outside connections: Place where required
+$Comp
+L GND #PWR07
+U 1 1 56847060
+P 850 4400
+F 0 "#PWR07" H 850 4150 50  0001 C CNN
+F 1 "GND" H 850 4250 50  0000 C CNN
+F 2 "" H 850 4400 50  0000 C CNN
+F 3 "" H 850 4400 50  0000 C CNN
+	1    850  4400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	950  4250 850  4250
+Wire Wire Line
+	850  4150 850  4400
+$Comp
+L PWR_FLAG #FLG08
+U 1 1 56847288
+P 850 4150
+F 0 "#FLG08" H 850 4245 50  0001 C CNN
+F 1 "PWR_FLAG" H 850 4330 50  0000 C CNN
+F 2 "" H 850 4150 50  0000 C CNN
+F 3 "" H 850 4150 50  0000 C CNN
+	1    850  4150
+	1    0    0    -1  
+$EndComp
+Connection ~ 850  4250
+$Comp
+L +5V #PWR09
+U 1 1 568473CE
+P 2050 4150
+F 0 "#PWR09" H 2050 4000 50  0001 C CNN
+F 1 "+5V" H 2050 4290 50  0000 C CNN
+F 2 "" H 2050 4150 50  0000 C CNN
+F 3 "" H 2050 4150 50  0000 C CNN
+	1    2050 4150
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_01X01 P3
+U 1 1 568473F2
+P 2350 4250
+F 0 "P3" H 2350 4350 50  0000 C CNN
+F 1 "PSU_5V" V 2450 4250 50  0000 C CNN
+F 2 "WS2811 Controller:SolderPad" H 2350 4250 50  0001 C CNN
+F 3 "" H 2350 4250 50  0000 C CNN
+	1    2350 4250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2050 4150 2050 4400
+Wire Wire Line
+	2050 4250 2150 4250
+$Comp
+L CONN_01X01 P2
+U 1 1 56847536
+P 1400 4900
+F 0 "P2" H 1400 5000 50  0000 C CNN
+F 1 "PSU_EN" V 1500 4900 50  0000 C CNN
+F 2 "WS2811 Controller:SolderPad" H 1400 4900 50  0001 C CNN
+F 3 "" H 1400 4900 50  0000 C CNN
+	1    1400 4900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1200 4900 750  4900
+Text Label 750  4900 0    60   ~ 0
+PSU_EN
+Wire Wire Line
+	2600 850  3200 850 
+Wire Wire Line
+	2600 950  3200 950 
+Wire Wire Line
+	3200 1250 3100 1250
+Wire Wire Line
+	3100 1250 3100 1450
+$Comp
+L PWR_FLAG #FLG010
+U 1 1 56852C0F
+P 2050 4400
+F 0 "#FLG010" H 2050 4495 50  0001 C CNN
+F 1 "PWR_FLAG" H 2050 4580 50  0000 C CNN
+F 2 "" H 2050 4400 50  0000 C CNN
+F 3 "" H 2050 4400 50  0000 C CNN
+	1    2050 4400
+	-1   0    0    1   
+$EndComp
+Connection ~ 2050 4250
+Wire Wire Line
+	3500 2300 2900 2300
+NoConn ~ 2900 2400
+$EndSCHEMATC

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Live Control</title>
+	<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="livecontrol.js"></script>
+	<link rel="stylesheet" type="text/css" href="livecontrol.css">
+</head>
+<body>
+	<div id="previews"></div>
+
+	<div id="info"><div id="info_padding">
+		<div id="active_container">
+			Active: <span id="active"></span>
+		</div>
+		<div id="next_container">
+			Next: <span id="next"></span>
+		</div>
+		<hr/>
+		<div id="description"></div>
+	</div></div>
+
+	<div id="recorder">
+		<div id="record_indicator">Recording</div>
+		<div id="record_timeline">
+			<div id="record_events"></div>
+			<div id="record_iter"></div>
+		</div>
+	</div>
+</body>
+</html>

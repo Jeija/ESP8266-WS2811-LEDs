@@ -1,0 +1,5 @@
+*~
+firmware/obj
+firmware/build
+client/node_modules
+client/site/bower_components
