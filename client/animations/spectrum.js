@@ -44,16 +44,17 @@ function drawbar(strips, s, amplitude, color) {
 	if (lastbars[s] > strips.getStripLength(s)) lastbars[s] = strips.getStripLength(s);
 	lastbars[s] = lastbars[s] * OLD_PER_FRAME + height * NEW_PER_FRAME;
 	lastbars[s] -= DECAY_PER_FRAME * strips.getStripLength(s);
+	var hperc = lastbars[s] / strips.getStripLength(s);
+	if (hperc > 1) hperc = 1;
 
 	// Determine bar color
 	var rgb;
 	if (color == "intensity1")
-		rgb = { red : lastbars[s] * 25.5, green : 255 - lastbars[s] * 25.5 };
+		rgb = { red : hperc * 255, green : 255 - hperc * 255 };
 	else if (color == "intensity1_blue")
-		rgb = { red : lastbars[s] * 25.5, blue : 255 - lastbars[s] * 25.5 };
+		rgb = { red : hperc * 255, blue : 255 - hperc * 255 };
 	else if (color == "intensity1_cyan")
-		rgb = { red : lastbars[s] * 25.5, blue : 255 - lastbars[s] * 25.5,
-			green : 255 - lastbars[s] * 25.5 };
+		rgb = { red : hperc * 255, blue : 255 - hperc * 255, green : 255 - hperc * 255 };
 	else if (color == "rainbowdash")
 	{
 		if (Math.round(s + time * 5) % 6 == 0) rgb = { red : 238, green :  20, blue :  20 };
@@ -69,9 +70,9 @@ function drawbar(strips, s, amplitude, color) {
 	for (var px = 0; px < lastbars[s] - 1; px++) {
 		var perc = px / strips.getStripLength(s);
 		if (color == "intensity2")
-			rgb = { red : perc * 255, green : 255 - perc * 25.5 };
+			rgb = { red : perc * 255, green : 255 - perc * 255 };
 		else if (color == "intensity2_blue")
-			rgb = { red : perc * 25.5, blue : 255 - perc * 25.5 };
+			rgb = { red : perc * 255, blue : 255 - perc * 255 };
 		else if (color == "intensity3")
 			rgb = { red : perc > 0.3 ? 255 : 0, green : perc < 0.7 ? 255 : 0 };
 		strips.setPixelSingle(s, px, rgb);
