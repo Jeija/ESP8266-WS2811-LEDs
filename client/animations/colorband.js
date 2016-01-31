@@ -89,7 +89,7 @@ module.exports = {
 		settings : {
 			color_even : [ "red", "white", "green", "blue", "rainbow" ],
 			color_odd : [ "white", "red", "green", "blue", "rainbow" ],
-			segment : [ 1, 2, 4, 8, 16 ],
+			segment : [ 4, 2, 1, 8, 16 ],
 			decay : [ "ultrafast", "fast", "normal", "slow" ]
 		},
 		init : init,
