@@ -7,7 +7,7 @@ var BEAT_TIME_COEFF = 0.6;
 var RAINBOW_TIME_COEFF = 0.05;
 var STRIP_DIFF_COEFF = 20;
 
-var time, beat, interval, decay, color, time=0, density_divisor;
+var time, beat, interval, decay, color, density_divisor;
 
 function init (strips, settings) {
 	time = 0;
