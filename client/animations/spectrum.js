@@ -1,6 +1,6 @@
-var DECAY_PER_FRAME = 0.04;
-var NEW_PER_FRAME = 0.3;
-var OLD_PER_FRAME = 0.9;
+var DECAY_PER_FRAME = 0.00;
+var NEW_PER_FRAME = 0.4;
+var OLD_PER_FRAME = 0.8;
 var MAXFREQ = 1600;
 var FREQ_INTERPOL_DEG = 2;
 var VOLUME_COEFF = 0.1;
@@ -9,13 +9,14 @@ var spawn = require("child_process").spawn;
 var parseColor = require("./parsecolor");
 var fjs = require("frequencyjs");
 
-var color, interval, arecord, audioIn, spectrum = [], vol = 0, time = 0;
+var color, interval, arecord, audioIn, spectrum = [], spectype, vol = 0, time = 0;
 
 function init (strips, settings) {
 	arecord = spawn("arecord", ["--rate", "16000", "-f", "U8", "-F", "16000", "-"]);
 	audioIn = new require("stream").PassThrough();
 	arecord.stdout.pipe(audioIn);
 	color = settings.color;
+	spectype = settings.type;
 
 	audioIn.on("data", function(data) {
 		var freqArray = [];
@@ -42,8 +43,8 @@ function drawbar(strips, s, amplitude, color) {
 	if (!lastbars[s]) lastbars[s] = 0;
 	if (lastbars[s] < 0) lastbars[s] = 0;
 	if (lastbars[s] > strips.getStripLength(s)) lastbars[s] = strips.getStripLength(s);
-	lastbars[s] = lastbars[s] * OLD_PER_FRAME + height * NEW_PER_FRAME;
 	lastbars[s] -= DECAY_PER_FRAME * strips.getStripLength(s);
+	lastbars[s] = lastbars[s] * OLD_PER_FRAME + height * NEW_PER_FRAME;
 	var hperc = lastbars[s] / strips.getStripLength(s);
 	if (hperc > 1) hperc = 1;
 
@@ -97,10 +98,10 @@ function freqSum(spectrum, lowerLimit, upperLimit) {
  * using simple interpolation
  */
 function getBarFrequency(n, total) {
-	var coeff = MAXFREQ / Math.pow(total + 2, FREQ_INTERPOL_DEG);
+	var coeff = MAXFREQ / Math.pow(total + 1, FREQ_INTERPOL_DEG);
 	return {
-		lower : coeff * Math.pow(n + 2, FREQ_INTERPOL_DEG),
-		upper : coeff * Math.pow(n + 3, FREQ_INTERPOL_DEG)
+		lower : n == 0 ? 20 : coeff * Math.pow(n + 1, FREQ_INTERPOL_DEG),
+		upper : coeff * Math.pow(n + 2, FREQ_INTERPOL_DEG)
 	};
 }
 
@@ -113,7 +114,15 @@ function draw (strips) {
 	}
 
 	for (var s = 0; s < strips.getStripNumber(); ++s) {
-		var freq = getBarFrequency(s, strips.getStripNumber());
+		var freq;
+		if (spectype == "normal") {
+			freq = getBarFrequency(s, strips.getStripNumber());
+		} else if (spectype == "allbass") {
+			freq = {
+				lower : 10,
+				upper : 80
+			};
+		}
 		drawbar(strips, s, freqSum(spectrum, freq.lower, freq.upper), color);
 	}
 }
@@ -136,7 +145,8 @@ module.exports = {
 		settings : {
 			color : ["white", "red", "green", "blue", "intensity1", "intensity1_blue",
 				"intensity1_cyan", "intensity2", "intensity2_blue", "intensity3",
-				"rainbowdash"]
+				"rainbowdash"],
+			type : [ "allbass", "normal" ]
 		},
 		terminate : terminate,
 		description : "Audio spectrum"
