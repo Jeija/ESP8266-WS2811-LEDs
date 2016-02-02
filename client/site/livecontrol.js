@@ -168,7 +168,7 @@ $(function() {
 				var ctx = cv[0].getContext("2d");
 				var width = ctx.canvas.width;
 				var height = ctx.canvas.height;
-				var pixelw = Math.ceil(width / stripfb.length);
+				var pixelw = Math.floor(width / stripfb.length);
 
 				for (var px in stripfb) {
 					// Set pixel color

@@ -79,6 +79,28 @@ LEDStrip.prototype.setPixel = function (n, color) {
 };
 
 /**
+ * Add to (overlay) color value to LED Strip
+ * n:		nth pixel of strip
+ * color:	An object of {red = <val>, green = <val>, blue = <val>}
+ * If n is larger than the strip length or negative, setPixel returns false, otherwise true
+ * The color value can never exceed 255 per color.
+ */
+LEDStrip.prototype.addPixel = function (n, color) {
+	if (n >= this.pixels || n < 0) return false;
+	this.fb.back[n] = {
+		red : this.fb.back[n].red + color.red,
+		green : this.fb.back[n].green + color.green,
+		blue : this.fb.back[n].blue + color.blue
+	};
+
+	if (this.fb.back[n].red > 255) this.fb.back[n].red = 255;
+	if (this.fb.back[n].green > 255) this.fb.back[n].green = 255;
+	if (this.fb.back[n].blue > 255) this.fb.back[n].blue = 255;
+
+	return true;
+};
+
+/**
  * Fill backbuffer, set all pixels to given color
  * color:	The color to set for all pixels
  */

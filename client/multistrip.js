@@ -40,6 +40,10 @@ MultiStrip.prototype.setPixelSingle = function(stripid, n, color) {
 	this.strips[stripid].setPixel(n, color);
 }
 
+MultiStrip.prototype.addPixelSingle = function(strip, n, color) {
+	this.strips[stripid].addPixel(n, color);
+}
+
 MultiStrip.prototype.flip = function () {
 	for (var s in this.strips)
 		this.strips[s].flip();
