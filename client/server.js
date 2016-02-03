@@ -4,6 +4,7 @@ var app = express();
 var http = require("http").Server(app);
 var io = require("socket.io")(http);
 var path = require("path");
+var cors = require("cors");
 
 // Load MultiStrip, animations and internal modules
 var AnimationManager = require("./animations");
@@ -23,7 +24,9 @@ setInterval(function () {
 	anim.draw();
 }, 1000 / FPS);
 
+app.use(cors());
 app.use(express.static(__dirname + "/site"));
+
 app.get("/", function (req, res){
 	res.sendFile(path.join(__dirname, "site/livecontrol.html"));
 });
@@ -70,6 +73,7 @@ app.get("/event", function (req, res){
 	} else {
 		anim.event("beat");
 	}
+	res.end();
 });
 
 http.listen(8081, function () {
