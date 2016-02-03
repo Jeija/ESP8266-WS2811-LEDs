@@ -5,5 +5,74 @@
 			"color" : "white",
 			"decay" : "fast"
 		}
+	},
+	"2" : {
+		"name": "particles",
+		"settings": {
+			"color": "rainbowpos",
+			"decay": "fast",
+			"spawnpoint": "end",
+			"amount": "high",
+			"velocity": "fast",
+			"friction": "normal",
+			"lifetime": "normal"
+		}
+	},
+	"3" : {
+		"name": "firenoise",
+		"settings": {
+			"color": "fire",
+			"brightness": "bright",
+			"decay": "normal",
+			"density": "high",
+			"sync": "random"
+		}
+	},
+	"4" : {
+		"name": "pulsate",
+		"settings": {
+			"frequency": "normal",
+			"sync": "order",
+			"color1": "rainbow",
+			"color2": "#aaa"
+		}
+	},
+	"5" : {
+		"name": "spectrum",
+		"settings": {
+			"color": "intensity1_cyan",
+			"type": "allbass"
+		}
+	},
+	"6" : {
+		"name": "wave",
+		"settings": {
+			"color": "rainbowpos",
+			"decay": "ultrafast",
+			"speed": "fast",
+			"dispersion": "normal",
+			"startpos": "sync"
+		}
+	},
+	"7" : {
+		"name": "colorband",
+		"settings": {
+			"color_even": "rainbow",
+			"color_odd": "#000",
+			"segment": "8",
+			"decay": "ultrafast"
+		}
+	},
+	"8" : {
+		"name": "particles",
+		"settings": {
+			"color": "bluefire",
+			"decay": "normal",
+			"spawnpoint": "bothends",
+			"amount": "high",
+			"velocity": "fast",
+			"friction": "superhigh",
+			"lifetime": "normal"
+		}
 	}
 }

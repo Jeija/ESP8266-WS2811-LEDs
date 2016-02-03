@@ -129,10 +129,12 @@ function init (strips, settings) {
 			for (var i = 0; i < max_amount; ++i) {
 				if (Math.random() < beat * INTERVAL_TIME) {
 					var spawnpos;
-					if (spawnpoint == "center")
+					if (spawnpoint == "center") {
 						spawnpos = strips.getStripLength(strip) / 2;
-					else if (spawnpoint == "two") {
+					} else if (spawnpoint == "two") {
 						spawnpos = (Math.random() > 0.5 ? 3/4 : 1/4) * strips.getStripLength(strip);
+					} else if (spawnpoint == "bothends") {
+						spawnpos = (Math.random() > 0.5 ? 1 : 0) * strips.getStripLength(strip);
 					} else if (spawnpoint == "start") {
 						spawnpos = 0;
 					} else if (spawnpoint == "end") {
@@ -178,7 +180,7 @@ module.exports = {
 		settings : {
 			color : [ "fire", "bluefire", "rainbow", "rainbowpos", "rainbowtime", "white", "red", "green", "blue" ],
 			decay : [ "normal", "fast", "ultrafast", "slow" ],
-			spawnpoint : [ "center", "start", "two", "end" ],
+			spawnpoint : [ "center", "start", "two", "end", "bothends" ],
 			amount : [ "normal", "high", "superhigh", "low" ],
 			velocity : [ "normal", "slow", "fast", "superfast" ],
 			friction : [ "normal", "low", "high", "superhigh", "none" ],

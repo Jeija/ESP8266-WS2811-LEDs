@@ -95,7 +95,7 @@ module.exports = {
 		name : "Firenoise",
 		settings : {
 			color : [ "bluefire", "fire", "pinknoise" ],
-			brightness : [ "superdark", "dark", "bright" ],
+			brightness : [ "bright", "dark", "superdark" ],
 			decay : [ "fast", "normal", "slow" ],
 			density : [ "normal", "low", "high" ],
 			sync : [ "synchronous", "random" ]

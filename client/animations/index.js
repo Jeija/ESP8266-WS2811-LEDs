@@ -42,12 +42,10 @@ module.exports = function (strips) {
 		},
 
 		event : function (ev, data) {
-			if (!animation_active) return false;
-
 			// Parse shortcuts
 			if (ev == "keypress" && shortcuts[data]) {
 				setAnimation(shortcuts[data].name, shortcuts[data].settings);
-			} else {
+			} else if (animation_active) {
 				animations[animation_active].event(ev, data);
 			}
 		}

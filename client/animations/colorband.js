@@ -87,8 +87,8 @@ module.exports = {
 	colorband : {
 		name : "Colorband",
 		settings : {
-			color_even : [ "red", "white", "green", "blue", "rainbow" ],
-			color_odd : [ "white", "red", "green", "blue", "rainbow" ],
+			color_even : "rainbow",
+			color_odd : "rainbow",
 			segment : [ 4, 2, 1, 8, 16 ],
 			decay : [ "ultrafast", "fast", "normal", "slow" ]
 		},
