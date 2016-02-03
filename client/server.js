@@ -64,6 +64,14 @@ io.on("connection", function (socket) {
 	});
 });
 
+app.get("/event", function (req, res){
+	if (req.query.type && req.query.data) {
+		anim.event(req.query.type, req.query.data);
+	} else {
+		anim.event("beat");
+	}
+});
+
 http.listen(8081, function () {
 	console.log("Server started!");
 });

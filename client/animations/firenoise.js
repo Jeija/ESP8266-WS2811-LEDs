@@ -57,13 +57,13 @@ function draw (strips) {
 			var rgb1, rgb2;
 			if (color == "fire") {
 				rgb1 = { red : 255, green : 20, blue : 0 };
-				rgb2 = { red : 200, green : 200, blue : 0 }
+				rgb2 = { red : 200, green : 200, blue : 0 };
 			} else if (color == "bluefire") {
 				rgb1 = { red : 0, green : 0, blue : 255 };
-				rgb2 = { red : 200, green : 200, blue : 200 }
+				rgb2 = { red : 200, green : 200, blue : 200 };
 			} else if (color == "pinknoise") {
 				rgb1 = { red : 255, green : 50, blue : 50 };
-				rgb2 = { red : 230, green : 230, blue : 230 }
+				rgb2 = { red : 230, green : 230, blue : 230 };
 			}
 
 			// Linear interpolation between rgb1 and rgb2 depending on noise
