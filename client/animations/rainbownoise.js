@@ -5,17 +5,11 @@ var color, beat, time, interval, decay, brightness, offset, density, sync;
 
 var INTERVAL_TIME = 0.01;
 var BEAT_COEFF = 0.05;
-var TIME_COEFF = 0.8;
+var TIME_COEFF = 0.2;
 var RANDOM_SYNC_OFFSET = 5;
 
 function init (strips, settings) {
 	color = settings.color;
-
-	switch (settings.brightness) {
-		case "superdark":	brightness = 0.4; break;
-		case "dark":		brightness = 0.7; break;
-		case "bright":		brightness = 1  ; break;
-	}
 
 	switch (settings.decay) {
 		case "fast":	decay = 7; break;
@@ -24,9 +18,9 @@ function init (strips, settings) {
 	}
 
 	switch (settings.density) {
-		case "low":		density = 20; break;
-		case "normal":	density = 12; break;
-		case "high":	density =  6; break;
+		case "low":		density = 60; break;
+		case "normal":	density = 30; break;
+		case "high":	density = 15; break;
 	}
 
 	switch (settings.sync) {
@@ -53,28 +47,13 @@ function draw (strips) {
 			var noise = (simplex.noise2D(px / density,
 				offset + time * TIME_COEFF + strip * sync) + 1) / 2;
 
-			var rgb1, rgb2;
-			if (color == "fire") {
-				rgb1 = { red : 255, green : 20, blue : 0 };
-				rgb2 = { red : 200, green : 200, blue : 0 };
-			} else if (color == "bluefire") {
-				rgb1 = { red : 0, green : 0, blue : 255 };
-				rgb2 = { red : 200, green : 200, blue : 200 };
-			} else if (color == "pinknoise") {
-				rgb1 = { red : 255, green : 50, blue : 50 };
-				rgb2 = { red : 230, green : 230, blue : 230 };
-			}
-
-			// Linear interpolation between rgb1 and rgb2 depending on noise
-			var rgb = {
-				red : rgb1.red * noise + rgb2.red * (1 - noise),
-				green : rgb1.green * noise + rgb2.green * (1 - noise),
-				blue : rgb1.blue * noise + rgb2.blue * (1 - noise),
-			};
-
-			rgb.red *= brightness;
-			rgb.green *= brightness;
-			rgb.blue *= brightness;
+			var rgb;
+			if (noise > 0/6 && noise < 1/6) rgb = { red : 238, green :  20, blue :  20 };
+			if (noise > 1/6 && noise < 2/6) rgb = { red : 250, green : 150, blue :  20 };
+			if (noise > 2/6 && noise < 3/6) rgb = { red : 253, green : 246, blue : 100 };
+			if (noise > 3/6 && noise < 4/6) rgb = { red :  50, green : 210, blue :  50 };
+			if (noise > 4/6 && noise < 5/6) rgb = { red :  30, green : 152, blue : 211 };
+			if (noise > 5/6 && noise < 6/6) rgb = { red : 110, green :  20, blue : 130 };
 
 			strips.setPixelSingle(strip, px, rgb);
 		}
@@ -90,11 +69,9 @@ function terminate () {
 }
 
 module.exports = {
-	firenoise : {
-		name : "Firenoise",
+	rainbownoise : {
+		name : "Rainbow dash noise",
 		settings : {
-			color : [ "bluefire", "fire", "pinknoise" ],
-			brightness : [ "bright", "dark", "superdark" ],
 			decay : [ "fast", "normal", "slow" ],
 			density : [ "normal", "low", "high" ],
 			sync : [ "synchronous", "random" ]
@@ -103,6 +80,6 @@ module.exports = {
 		draw : draw,
 		event : event,
 		terminate : terminate,
-		description : "Fire-like simplex noise animation. No special keys."
+		description : "Rainbow dash tail color animation. No special keys."
 	}
 };
