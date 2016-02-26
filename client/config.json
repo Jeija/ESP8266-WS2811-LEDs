@@ -54,5 +54,19 @@
 		"arrangement" : "forwards",
 		"length" : 50,
 		"fps" : 40
+	},
+	{
+		"ip" : "192.168.0.88",
+		"port" : 2711,
+		"arrangement" : "forwards",
+		"length" : 50,
+		"fps" : 40
+	},
+	{
+		"ip" : "192.168.0.70",
+		"port" : 2711,
+		"arrangement" : "center",
+		"length" : 100,
+		"fps" : 40
 	}
 ]

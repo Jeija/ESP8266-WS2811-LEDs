@@ -1,5 +1,7 @@
 # ESP8266 driver for WS2811 LED Strips
-### This project is incomplete, more animations and hopefully some photos will be posted soon.
+See the LED Strips in action in this video:
+
+[![Faschingsparty Thumbnail](http://img.youtube.com/vi/3oMDUkM88Io/0.jpg)](https://www.youtube.com/watch?v=3oMDUkM88Io)
 
 ## Project description
 This project uses the ESP8266's DMA (Direct Memory Access) functionality that is designed for I²S output in order to drive WS2811 LEDs. It is remotely based on cnlohr's [WS2812 driver implementation](https://github.com/cnlohr/esp8266ws2812i2s), but much more minimal. If you want to use this implementation in your own project, just get these source files:
