@@ -8,7 +8,8 @@
     "url": "https://github.com/Jeija/ESP8266-WS2811-LEDs.git"
   },
   "dependencies": {
-    "csv-load-sync": "0.0.3",
+    "cors": "^2.7.1",
+    "csv-load-sync": "1.0.0",
     "express": "^4.13.3",
     "frequencyjs": "0.0.4",
     "get-pixels": "^3.2.3",
